@@ -5,12 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 require('dotenv').config();
+var pool = require('./models/bd')
 
 var indexRouter = require('./routes/index');
-var galeriaRouter = require ('./routes/galeria');
-var contactoRouter = require ('./routes/contacto');
-var app = express();
+var usersRouter = require('./routes/users');
 
+var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,18 +22,40 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use ('/galeria', galeriaRouter)
-app.use ('/contacto', contactoRouter)
+//select
+// pool.query('select * from empleados').then(function (resultados) {
+//   console.log(resultados)
+// })
+//insert
+// var obj = {
+//   nombre: 'Juan',
+//   apellido: 'Lopez',
+//   trabajo: 'docente',
+//   edad: 38,
+//   salario: 1500,
+//   mail: 'juanlopez@gmail.com'
+// } 
 
+// pool.query('insert into empleados set ?', [obj]).then(function (resultados) {
+//   console.log(resultados)
+// })
+//modify
+// var id = 10;
+// var obj = {
+//   nombre: 'Pablo',
+//   apellido: 'Simona'
+// }
+// pool.query('update empleados set ? where id_emp=?', [obj, id]).then (function (resultados) {
+//   console.log(resultados)
+// });
+//eliminar
+// var id = 23;
+// pool.query('delete from empleados where id_emp=?', [id]).then(function (resultados) {
+//   console.log(resultados)
+// })
 
-app.get('/prueba', function(req, res){
-  res.send('Hola Probando local host')
-})
-
-app.get('/nosotros', function(req, res){
-  res.send('Hola soy la pagina de nosotros')
-})
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
