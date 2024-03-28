@@ -13,45 +13,28 @@
                 {{#each novedades}}
                 <li>
                     <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#Modal {{ id }}">
-                        <img src="images/novedades01.jpg">Nuevas Recetas 1
+                        <img src="images/novedades01.jpg">{{Nuevas Recetas 1}}
                     </a>
                 </li>
-                <li>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <img src="images/novedades01.jpg">Nuevas Recetas 2
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <img src="images/novedades01.jpg">Nuevas Recetas 3
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <img src="images/novedades01.jpg">Nuevas Recetas 4
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <img src="images/novedades01.jpg">Nuevas Recetas 5
-                    </a>
-                </li>
+                {{/each}}
             </ul>
         </div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        {{#each novedades}}
+        <div class="modal fade" id="Modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title" id="exampleModalLabel">Nueva Receta 1</h2>
+                        <h2 class="modal-title" id="exampleModalLabel">{{titulo}}</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         <div class="modal-body">
-                            <h3>subtitulo</h3>
-                            <p>cuerpo</p>
+                            <h3>{{subtitulo}}</h3>
+                            <p>{{cuerpo}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        {{/each}}
         <div class="col-md-3 my-3">
             <div class="rounded py-5 testimonios">
                 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
