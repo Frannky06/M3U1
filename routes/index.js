@@ -1,18 +1,14 @@
 var express = require('express');
 var router = express.Router();
+var novedadesModel = require('../models/novedadesModel');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-module.exports = router;
-var express = require('express');
-var router = express.Router();
-
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/', async function(req, res, next) {
+  var novedades = await novedadesModel.getNovedades();
+  novedades = novedades.splice(0,5);
+  res.render('index',{
+    novedades
+  });
 });
 
 module.exports = router;
