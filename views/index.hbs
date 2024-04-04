@@ -1,9 +1,8 @@
 <div id="home" class="row align-items-center hero scroll_section">
     <div class="col-lg-3 offset-lg-2">
         <p>Bajada</p>
-        <h1>Titulo Principal</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, aliquid? Quod atque totam at provident
-            deserunt eaque, ullam molestias ipsum architecto quidem minus esse est placeat eligendi cum iste sapiente?
+        <h1>Cerveceria X</h1>
+        <p>En nuestro rincón cervecero, fusionamos la pasión por la tradición con la innovación más fresca. Cada sorbo cuenta una historia: desde los lúpulos seleccionados hasta los granos tostados con esmero, cada ingrediente se une para crear experiencias únicas en cada botella.
         </p>
     </div>
 </div>
@@ -13,8 +12,8 @@
         <ul class="lista-novedades">
             {{#each novedades}}
             <li><a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#Modal{{id}}"> <img
-                        src="images/novedades01.jpg">{{titulo}}
-                   </a></li>
+                        src="{{imagen}}">{{titulo}}
+                </a></li>
             {{/each}}
         </ul>
     </div>
@@ -28,6 +27,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <div class="modal-body">
+                        <img src="{{imagen}}">
                         <h3>{{subtitulo}}</h3>
                         <p>{{cuerpo}}</p>
                     </div>
@@ -36,48 +36,49 @@
         </div>
     </div>
     {{/each}}
-</div>
-<div class="col-md-3 my-3">
-    <div class="rounded py-5 testimonios">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="testimonio">
-                        <H5>"La mejor birra del mundo!!"</H5>
-                        <p>Francisco, Monte Grande</p>
+
+    <div class="col-md-3 my-3">
+        <div class="rounded py-5 testimonios">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonio">
+                            <H5>"La mejor birra del mundo!!"</H5>
+                            <p>Francisco, Monte Grande</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="testimonio">
-                    <h5>La mejor birra del mundo 2!!</h5>
-                    <p>Flavia, Devoto</p>
+                <div class="carousel-item">
+                    <div class="testimonio">
+                        <h5>La mejor birra del mundo 2!!</h5>
+                        <p>Flavia, Devoto</p>
+                    </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="testimonio">
-                    <h5> La mejor birra del mundo 3!!</h5>
-                    <p>Eric, Mataderos</p>
+                <div class="carousel-item">
+                    <div class="testimonio">
+                        <h5> La mejor birra del mundo 3!!</h5>
+                        <p>Eric, Mataderos</p>
+                    </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </div>
 </div>
@@ -174,33 +175,35 @@
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2188434591894!2d-58.42269192339244!3d-34.59862725723095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb2e1493a6a3%3A0x1862a7c0b8163e5d!2sUTN.BA!5e0!3m2!1ses-419!2sar!4v1705597199623!5m2!1ses-419!2sar"></iframe>
         </div>
     </div>
-</div>
-<div class="col-md-4 mt-4 mt-sm-0">
-    <h2>Contactanos</h2>
-    <form class="row g-3">
-        <div class="col-md-6">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre">
-        </div>
-        <div class="col-md-6">
-            <label for="apellido" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="apellido" name="apellido">
-        </div>
-        <div class="col-12">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="email@email.com" name="email@email.com">
-        </div>
-        <div class=" col-12">
-            <label for="tel" class="form-label">Tel</label>
-            <input type="text" class="form-control" id="tel" placeholder="..." name="tel">
 
-        </div>
-        <div class="col-12">
-            <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="mensaje" rows="3" name="mensaje"></textarea>
-        </div>
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary">Enviar</button>
-        </div>
-    </form>
+    <div class="col-md-4 mt-4 mt-sm-0">
+        <h2>Contactanos</h2>
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre">
+            </div>
+            <div class="col-md-6">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido">
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="email@email.com"
+                    name="email@email.com">
+            </div>
+            <div class=" col-12">
+                <label for="tel" class="form-label">Tel</label>
+                <input type="text" class="form-control" id="tel" placeholder="..." name="tel">
+
+            </div>
+            <div class="col-12">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" rows="3" name="mensaje"></textarea>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </form>
+    </div>
 </div>
